@@ -16,10 +16,14 @@ instalado de forma permanente y no depende de banderas especiales ni de reinstal
    - [Tampermonkey](https://www.tampermonkey.net/) (Chrome, Edge, Firefox, Opera, Safari)
    - [Violentmonkey](https://violentmonkey.github.io/) (Chrome, Edge, Firefox)
    - Greasemonkey **no es compatible** con este script.
-2. Abre el panel del gestor → **Dashboard** → pestaña **Utilities** → **Import from file**
-   (o "Create a new script" y pega el contenido manualmente).
-3. Selecciona/pega el archivo [`streaming-screenshare-fix.user.js`](./streaming-screenshare-fix.user.js) de esta carpeta y guarda.
-4. Recarga la página del servicio de streaming que estés usando.
+2. Abre directamente el archivo raw del script:
+   **[streaming-screenshare-fix.user.js](https://raw.githubusercontent.com/negalxd/streaming-screenshare-solution/master/streaming-screenshare-fix.user.js)**
+   — el gestor de userscripts debería detectarlo y mostrar la pantalla de instalación automáticamente.
+3. Confirma la instalación.
+
+Instalar desde esa URL (en vez de copiar/pegar el contenido) es lo que permite que el script
+se **auto-actualice**: cada vez que se publique un fix con un `@version` mayor, tu gestor de
+userscripts lo detectará y lo actualizará solo.
 
 ## Uso
 
@@ -34,6 +38,13 @@ instalado de forma permanente y no depende de banderas especiales ni de reinstal
 ## Servicios soportados
 
 Netflix · HBO Max · Disney+ · Prime Video · Hulu · Crunchyroll · Paramount+ · Apple TV+ · Peacock · HIDIVE · Star+ · MUBI · Funimation
+
+## Publicar un fix
+
+Cada vez que se suba un cambio, sube también el número de `@version` en la cabecera del
+script (Tampermonkey/Violentmonkey solo actualizan si la versión remota es mayor que la
+instalada). Los gestores revisan actualizaciones periódicamente; también puedes forzar la
+revisión manualmente desde el Dashboard del gestor ("Check for userscript updates").
 
 ## Notas técnicas
 

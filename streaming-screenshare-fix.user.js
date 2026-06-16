@@ -1,9 +1,11 @@
 // ==UserScript==
 // @name         Streaming Screenshare Fix
 // @namespace    https://github.com/negalxd/streaming-screenshare-fix
-// @version      1.2.0
+// @version      1.2.1
 // @description  Evita la pantalla negra al compartir pantalla (Discord, etc.) en Netflix, Prime Video, Crunchyroll, Disney+, HBO Max, Hulu y más
 // @author       negalxd
+// @updateURL    https://raw.githubusercontent.com/negalxd/streaming-screenshare-solution/master/streaming-screenshare-fix.user.js
+// @downloadURL  https://raw.githubusercontent.com/negalxd/streaming-screenshare-solution/master/streaming-screenshare-fix.user.js
 // @match        *://*.netflix.com/*
 // @match        *://netflix.com/*
 // @match        *://*.primevideo.com/*
