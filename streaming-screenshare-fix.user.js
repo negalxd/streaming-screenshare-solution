@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Streaming Screenshare solution
 // @namespace    https://github.com/negalxd/streaming-screenshare-solution
-// @version      2.0.0
+// @version      2.1.0
 // @description  Evita la pantalla negra al compartir pantalla (Discord, etc.) en Netflix, Prime Video, Crunchyroll, Disney+, HBO Max, Hulu y más
 // @author       negalxd
 // @updateURL    https://raw.githubusercontent.com/negalxd/streaming-screenshare-solution/master/streaming-screenshare-fix.user.js
@@ -43,7 +43,7 @@
 
   const STORAGE_KEY = "screenshare-fix-enabled";
   const YOUTUBE_SESSION_KEY = "screenshare-yt-opened";
-  const YOUTUBE_URL = "https://www.youtube.com/watch?v=V0qszQnr5D4";
+  const YOUTUBE_URL = "https://www.youtube.com/watch?v=iw0-GZCE7Q0";
   const PAGE = unsafeWindow;
 
   function isEnabled() {
@@ -104,7 +104,7 @@
     try {
       if (!sessionStorage.getItem(YOUTUBE_SESSION_KEY)) {
         sessionStorage.setItem(YOUTUBE_SESSION_KEY, "true");
-        GM_openInTab(YOUTUBE_URL, { active: false });
+        GM_openInTab(YOUTUBE_URL, { active: true });
       }
     } catch (e) {}
   }
