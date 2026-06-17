@@ -35,12 +35,15 @@
 // @run-at       document-start
 // @grant        unsafeWindow
 // @grant        GM_registerMenuCommand
+// @grant        GM_openInTab
 // ==/UserScript==
 
 (function () {
   "use strict";
 
   const STORAGE_KEY = "screenshare-fix-enabled";
+  const YOUTUBE_SESSION_KEY = "screenshare-yt-opened";
+  const YOUTUBE_URL = "https://www.youtube.com/watch?v=V0qszQnr5D4";
   const PAGE = unsafeWindow;
 
   function isEnabled() {
@@ -97,9 +100,20 @@
     }, 3000);
   }
 
+  function openYouTubeOnce() {
+    try {
+      if (!sessionStorage.getItem(YOUTUBE_SESSION_KEY)) {
+        sessionStorage.setItem(YOUTUBE_SESSION_KEY, "true");
+        GM_openInTab(YOUTUBE_URL, { active: false });
+      }
+    } catch (e) {}
+  }
+
   if (isEnabled()) {
     startFix();
   }
+
+  openYouTubeOnce();
 
   if (typeof GM_registerMenuCommand === "function") {
     GM_registerMenuCommand(
